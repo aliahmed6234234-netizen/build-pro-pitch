@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react';
+import { Calendar, Users, MapPin, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-building.jpg';
 
@@ -11,23 +11,65 @@ const Hero = () => {
           {/* Left Content */}
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-6">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-foreground leading-tight">
-                Building
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground leading-tight">
+                Optimize Your Property with
                 <br />
-                <span className="text-primary">Dreams</span>
+                <span className="text-primary">Premium Real Estate Solutions</span>
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed">
-                Premium residential and commercial properties crafted with excellence and delivered with trust.
+              <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
+                Welcome to <strong>Premium Builders</strong> - Your Partner for Optimized Property Solutions. 
+                We are a leading construction and development company offering premium residential and commercial 
+                properties at every stage of your investment journey, from planning to possession. We adapt to your 
+                evolving needs, allowing you to focus on your investment goals.
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="group">
-                Explore Projects
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button variant="outline" size="lg">
-                Get In Touch
+            {/* Service Grid */}
+            <div className="grid grid-cols-2 gap-4 max-w-lg">
+              <div className="flex items-center space-x-3 p-4 bg-card/50 rounded-lg border backdrop-blur-sm">
+                <div className="p-2 bg-primary/10 rounded-lg">
+                  <Calendar className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <div className="font-semibold text-sm text-foreground">Schedule Site Visit</div>
+                  <div className="text-xs text-muted-foreground">Select best time for you</div>
+                </div>
+              </div>
+              
+              <div className="flex items-center space-x-3 p-4 bg-card/50 rounded-lg border backdrop-blur-sm">
+                <div className="p-2 bg-primary/10 rounded-lg">
+                  <Users className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <div className="font-semibold text-sm text-foreground">Expert Consultation</div>
+                  <div className="text-xs text-muted-foreground">Get professional advice</div>
+                </div>
+              </div>
+              
+              <div className="flex items-center space-x-3 p-4 bg-card/50 rounded-lg border backdrop-blur-sm">
+                <div className="p-2 bg-primary/10 rounded-lg">
+                  <MapPin className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <div className="font-semibold text-sm text-foreground">Visit Properties</div>
+                  <div className="text-xs text-muted-foreground">Explore our locations</div>
+                </div>
+              </div>
+              
+              <div className="flex items-center space-x-3 p-4 bg-card/50 rounded-lg border backdrop-blur-sm">
+                <div className="p-2 bg-primary/10 rounded-lg">
+                  <MessageCircle className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <div className="font-semibold text-sm text-foreground">Ask Questions</div>
+                  <div className="text-xs text-muted-foreground">Get instant support</div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="pt-4">
+              <Button size="lg" className="px-8">
+                Contact Us
               </Button>
             </div>
           </div>
@@ -39,17 +81,6 @@ const Hero = () => {
               style={{ backgroundImage: `url(${heroImage})` }}
             >
               <div className="absolute inset-0 bg-gradient-to-l from-background/20 to-transparent rounded-2xl"></div>
-            </div>
-            
-            {/* Floating Stats */}
-            <div className="absolute -bottom-6 -left-6 bg-card/95 backdrop-blur-sm rounded-xl p-6 shadow-lg border animate-slide-in-right">
-              <div className="text-2xl font-bold text-primary">15+</div>
-              <div className="text-sm text-muted-foreground">Years Experience</div>
-            </div>
-            
-            <div className="absolute -top-6 -right-6 bg-card/95 backdrop-blur-sm rounded-xl p-6 shadow-lg border animate-slide-in-right" style={{ animationDelay: '0.2s' }}>
-              <div className="text-2xl font-bold text-primary">500+</div>
-              <div className="text-sm text-muted-foreground">Happy Families</div>
             </div>
           </div>
         </div>
