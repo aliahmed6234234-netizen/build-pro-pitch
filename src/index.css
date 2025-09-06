@@ -1,42 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Real Estate Builder Professional Design System */
 
 @layer base {
   :root {
+    /* Primary Brand Colors - Professional Navy & Gold */
+    --primary: 220 91% 15%;
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 220 91% 25%;
+    --primary-dark: 220 91% 8%;
+
+    /* Secondary/Accent - Luxury Gold */
+    --secondary: 42 100% 70%;
+    --secondary-foreground: 220 91% 15%;
+    --accent: 42 87% 55%;
+    --accent-foreground: 220 91% 15%;
+
+    /* Neutrals - Sophisticated Grays */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --foreground: 220 13% 18%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    
+    /* UI Elements */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 13% 18%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 91% 15%;
+    
+    /* Status Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 98%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(220 91% 15%), hsl(220 91% 25%));
+    --gradient-gold: linear-gradient(135deg, hsl(42 100% 70%), hsl(42 87% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 91% 15% / 0.95), hsl(220 91% 8% / 0.98));
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(220 91% 15% / 0.1);
+    --shadow-card: 0 4px 20px -4px hsl(220 91% 15% / 0.08);
+    --shadow-gold: 0 8px 25px -8px hsl(42 100% 70% / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +117,98 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+  }
+}
+
+@layer components {
+  /* Hero Section Styles */
+  .hero-background {
+    background: var(--gradient-hero);
+  }
+
+  .hero-title {
+    @apply text-5xl md:text-7xl font-bold text-primary-foreground;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .hero-subtitle {
+    @apply text-xl md:text-2xl text-primary-foreground/90 font-light;
+  }
+
+  /* Project Cards */
+  .project-card {
+    @apply bg-card rounded-lg overflow-hidden transition-all duration-300;
+    box-shadow: var(--shadow-card);
+  }
+
+  .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-elegant);
+  }
+
+  /* Trust Section */
+  .trust-badge {
+    @apply inline-flex items-center gap-2 bg-secondary/10 text-secondary-foreground px-4 py-2 rounded-full text-sm font-medium;
+    border: 1px solid hsl(var(--secondary) / 0.2);
+  }
+
+  /* Buttons */
+  .btn-hero {
+    @apply bg-secondary text-secondary-foreground hover:bg-accent px-8 py-4 rounded-lg font-semibold text-lg;
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-gold);
+  }
+
+  .btn-hero:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold), 0 8px 25px -8px hsl(42 100% 70% / 0.4);
+  }
+
+  /* Section Styles */
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-foreground text-center mb-4;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .section-subtitle {
+    @apply text-lg md:text-xl text-muted-foreground text-center max-w-2xl mx-auto mb-12;
+  }
+
+  /* Status Indicators */
+  .status-ongoing {
+    @apply bg-accent/10 text-accent-foreground px-3 py-1 rounded-full text-sm font-medium;
+    border: 1px solid hsl(var(--accent) / 0.3);
+  }
+
+  .status-completed {
+    @apply bg-success/10 text-success-foreground px-3 py-1 rounded-full text-sm font-medium;
+    border: 1px solid hsl(var(--success) / 0.3);
+  }
+
+  /* Contact Form */
+  .contact-form {
+    @apply space-y-6 bg-card rounded-xl p-8;
+    box-shadow: var(--shadow-elegant);
+  }
+
+  /* Navigation */
+  .nav-link {
+    @apply text-foreground hover:text-primary font-medium transition-colors duration-200;
+  }
+
+  .nav-link:hover {
+    transform: translateY(-1px);
   }
 }
