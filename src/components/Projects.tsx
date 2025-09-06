@@ -33,15 +33,37 @@ const Projects = () => {
 
   const completedProjects = [
     {
-      id: 3,
-      name: "Corporate Plaza",
-      location: "Commercial Hub",
-      type: "Office Complex",
-      image: projectCommercial,
-      features: ["Grade A Office", "Parking", "Modern Design", "Prime Location"],
-      completion: "2023",
+      id: 101,
+      name: "Sunset Heights",
+      location: "West End",
+      type: "Residential Apartments",
+      image: projectApartment,
+      features: ["2-3 BHK", "Park View", "Clubhouse", "Children's Play Area"],
+      completion: "2022",
+      status: "completed",
+      units: "98% Sold"
+    },
+    {
+      id: 102,
+      name: "Green Valley Villas",
+      location: "Suburban Zone",
+      type: "Luxury Villas",
+      image: projectVilla,
+      features: ["Private Garden", "Swimming Pool", "4 BHK", "Gated Community"],
+      completion: "2021",
       status: "completed",
       units: "100% Sold"
+    },
+    {
+      id: 103,
+      name: "Metro One Tower",
+      location: "City Center",
+      type: "Commercial Offices",
+      image: projectCommercial,
+      features: ["Smart Offices", "Parking", "Cafeteria", "24/7 Security"],
+      completion: "2020",
+      status: "completed",
+      units: "95% Sold"
     }
   ];
 
