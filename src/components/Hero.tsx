@@ -12,7 +12,7 @@ const Hero = () => {
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground leading-tight">
-                Optimize Your Property with
+                
                 <br />
                 <span className="text-primary">Premium Real Estate Solutions</span>
               </h1>
@@ -26,7 +26,7 @@ const Hero = () => {
             
             {/* Service Grid */}
             <div className="grid grid-cols-2 gap-4 max-w-lg">
-              <div className="flex items-center space-x-3 p-4 bg-card/50 rounded-lg border backdrop-blur-sm">
+              <div className="flex items-center space-x-3 p-4 bg-card/50 rounded-lg border backdrop-blur-sm transition-shadow duration-200 hover:shadow-xl">
                 <div className="p-2 bg-primary/10 rounded-lg">
                   <Calendar className="w-5 h-5 text-primary" />
                 </div>
@@ -36,7 +36,7 @@ const Hero = () => {
                 </div>
               </div>
               
-              <div className="flex items-center space-x-3 p-4 bg-card/50 rounded-lg border backdrop-blur-sm">
+              <div className="flex items-center space-x-3 p-4 bg-card/50 rounded-lg border backdrop-blur-sm transition-shadow duration-200 hover:shadow-xl">
                 <div className="p-2 bg-primary/10 rounded-lg">
                   <Users className="w-5 h-5 text-primary" />
                 </div>
@@ -46,7 +46,7 @@ const Hero = () => {
                 </div>
               </div>
               
-              <div className="flex items-center space-x-3 p-4 bg-card/50 rounded-lg border backdrop-blur-sm">
+              <div className="flex items-center space-x-3 p-4 bg-card/50 rounded-lg border backdrop-blur-sm transition-shadow duration-200 hover:shadow-xl">
                 <div className="p-2 bg-primary/10 rounded-lg">
                   <MapPin className="w-5 h-5 text-primary" />
                 </div>
@@ -56,7 +56,7 @@ const Hero = () => {
                 </div>
               </div>
               
-              <div className="flex items-center space-x-3 p-4 bg-card/50 rounded-lg border backdrop-blur-sm">
+              <div className="flex items-center space-x-3 p-4 bg-card/50 rounded-lg border backdrop-blur-sm transition-shadow duration-200 hover:shadow-xl">
                 <div className="p-2 bg-primary/10 rounded-lg">
                   <MessageCircle className="w-5 h-5 text-primary" />
                 </div>
@@ -75,12 +75,12 @@ const Hero = () => {
           </div>
 
           {/* Right Image */}
-          <div className="relative lg:h-[80vh] h-[60vh] animate-scale-in">
+          <div className="relative max-h-[60vh] h-[60vh] animate-scale-in hover:shadow-lg transition-transform duration-300">
             <div 
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat rounded-2xl shadow-2xl"
-              style={{ backgroundImage: `url(${heroImage})` }}
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat shadow-2xl"
+              style={{ backgroundImage: `url(${heroImage})`, borderRadius: '25px', boxShadow: '0 8px 32px 0 rgba(0,0,0,0.25)' }}
             >
-              <div className="absolute inset-0 bg-gradient-to-l from-background/20 to-transparent rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-l from-background/20 to-transparent" style={{ borderRadius: '25px' }}></div>
             </div>
           </div>
         </div>
