@@ -1,4 +1,5 @@
 import { MapPin, Calendar, Users, ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import projectVilla from '@/assets/project-villa.jpg';
@@ -6,6 +7,7 @@ import projectApartment from '@/assets/project-apartment.jpg';
 import projectCommercial from '@/assets/project-commercial.jpg';
 
 const Projects = () => {
+  const navigate = useNavigate();
   const ongoingProjects = [
     {
       id: 1,
@@ -163,7 +165,7 @@ const Projects = () => {
 
         {/* CTA */}
         <div className="text-center">
-          <Button className="btn-hero group">
+          <Button className="btn-hero group" onClick={() => navigate('/all-projects')}>
             View All Projects
             <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>

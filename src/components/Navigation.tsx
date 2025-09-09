@@ -1,15 +1,17 @@
 import { useState } from 'react';
 import { Menu, X, Phone, Mail } from 'lucide-react';
-
+import { useNavigate } from 'react-router-dom';
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Gallery', href: '#gallery' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '#home' , onRenderPage:()=>{navigate('/');}},
+    { name: 'About', href: '#about', onRenderPage:()=>{navigate('/#about'); },},
+    { name: 'Projects', href: '#projects',  onRenderPage:()=>{navigate('/#projects'); }, },
+    // { name: 'Gallery', href: '#gallery' },
+    { name: 'Contact', href: '#contact', onRenderPage:()=>{navigate('/#contact'); }, },
   ];
 
   return (
@@ -18,7 +20,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-primary font-serif">
+            <h1 className="text-2xl font-bold text-primary font-serif cursor-pointer" onClick={() => navigate('/')}>
               Builder<span className="text-secondary">Pro</span>
             </h1>
           </div>
@@ -31,6 +33,19 @@ const Navigation = () => {
                   key={item.name}
                   href={item.href}
                   className="nav-link"
+                  onClick={e => {
+                    if (item.href.startsWith('#')) {
+                      e.preventDefault();
+                      if (window.location.pathname !== '/') {
+                        navigate('/', { state: { scrollTo: item.href.replace('#', '') } });
+                      } else {
+                        const el = document.getElementById(item.href.replace('#', ''));
+                        if (el) {
+                          el.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }
+                    }
+                  }}
                 >
                   {item.name}
                 </a>
@@ -71,7 +86,20 @@ const Navigation = () => {
                 key={item.name}
                 href={item.href}
                 className="block px-3 py-2 nav-link"
-                onClick={() => setIsOpen(false)}
+                onClick={e => {
+                  setIsOpen(false);
+                  if (item.href.startsWith('#')) {
+                    e.preventDefault();
+                    if (window.location.pathname !== '/') {
+                      navigate('/', { state: { scrollTo: item.href.replace('#', '') } });
+                    } else {
+                      const el = document.getElementById(item.href.replace('#', ''));
+                      if (el) {
+                        el.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }
+                  }
+                }}
               >
                 {item.name}
               </a>
