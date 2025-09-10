@@ -98,7 +98,7 @@ const About = () => {
               "At BuilderPro, we don't just construct buildings; we craft experiences. 
               Every project reflects our commitment to quality, innovation, and customer satisfaction."
             </p>
-            <div className="text-xl font-semibold text-primary">- Rajesh Kumar, Founder & CEO</div>
+            <div className="text-xl font-semibold text-primary">- BOB, Founder & CEO</div>
             <div className="text-muted-foreground">Civil Engineer, 20+ Years Experience</div>
           </div>
         </div>

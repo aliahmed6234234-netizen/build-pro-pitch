@@ -68,7 +68,12 @@ const Hero = () => {
             </div>
             
             <div className="pt-4">
-              <Button size="lg" className="px-8">
+              <Button size="lg" className="px-8" onClick={() => {
+                const el = document.getElementById('contact');
+                if (el) {
+                  el.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}>
                 Contact Us
               </Button>
             </div>
