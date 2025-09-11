@@ -124,7 +124,7 @@ const Footer = () => {
                 height={200}
                 
                 className="w-20 h-4 ml-1"
-              />a</a>
+              /></a>
               
             </div>
           </div>
