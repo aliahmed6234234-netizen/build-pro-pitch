@@ -1,5 +1,5 @@
 import { Facebook, Instagram, Twitter, Linkedin, Phone, Mail, MapPin } from 'lucide-react';
-
+import image from './../assets/PPR3.png';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -108,6 +108,26 @@ const Footer = () => {
             <p className="text-primary-foreground/80 text-sm">
               © {currentYear} BuilderPro. All rights reserved.
             </p>
+            <div className="flex  justify-center items-center text-primary-foreground/80">
+            <div className=" flex items-center  text-xs">
+              Powered by
+              <a
+                href="https://solvspot.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#c248eb] underline"
+              > <img
+              
+                src={image}
+                alt="SolvSpot"
+                width={200}
+                height={200}
+                
+                className="w-20 h-4 ml-1"
+              /></a>
+              
+            </div>
+          </div>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-primary-foreground/80 hover:text-secondary text-sm transition-colors">
                 Privacy Policy
