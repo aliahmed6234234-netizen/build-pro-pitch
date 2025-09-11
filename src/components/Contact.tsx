@@ -184,14 +184,14 @@ const Contact = () => {
         {/* Map Placeholder */}
         <div className="mt-16">
           <h3 className="text-3xl font-bold text-center mb-8 font-serif">Find Us</h3>
-          <div className="bg-muted rounded-xl h-96 flex items-center justify-center">
-            <div className="text-center">
-              <MapPin className="w-16 h-16 text-secondary mx-auto mb-4" />
-              <p className="text-lg font-medium">Interactive Map</p>
-              <p className="text-muted-foreground">
-                123 Builder Street, Downtown District
-              </p>
-            </div>
+          <div className="bg-muted rounded-xl overflow-hidden flex items-center justify-center" style={{ height: '384px' }}>
+       			<iframe
+  title="g-map"
+  frameBorder="0"
+  scrolling="no"
+ src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d415.54610180392166!2d73.19191460781454!3d33.569772132598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfee879643114b%3A0xd9111e1855362e9d!2sMUFTI%20ESTAE%20AND%20BUILDERS!5e0!3m2!1sen!2s!4v1757524227950!5m2!1sen!2s"
+  style={{ width: '100%', height: '100%', border: 0, display: 'block' }}
+/>
           </div>
         </div>
       </div>
